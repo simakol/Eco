@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Helvetica Neue thin';
+    src: local('Helvetica Neue Thin'), local('Helvetica-Neue-Thin'),
+        url('../fonts/HelveticaNeueCyr-Thin.woff2') format('woff2'),
+        url('../fonts/HelveticaNeueCyr-Thin.woff') format('woff'),
+        url('../fonts/HelveticaNeueCyr-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue light';
+    src: local('Helvetica Neue light'), local('Helvetica-Neue-light'),
+        url('../fonts/HelveticaNeueCyr-Light.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --selected-text-color: #3D5946;
+    --main-text-color: #181818;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100vw;
+    padding: 22px 0;
+    font-family: 'Helvetica Neue light', sans-serif;
+}
+
+.header>.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-text>p {
+    font-size: 26px;
+    letter-spacing: 2.8px;
+    color: var(--selected-text-color);
+}
+
+.header-text>p::before {
+    content: "";
+    width: 19px;
+    height: 28px;
+    padding-right: 22px;
+    background-image: url("../img/icons/main-text-logo.png");
+}
+
+.header-text>p::after {
+    content: "";
+    position: relative;
+    top: 4px;
+    left: 3px;
+    display: inline-block;
+    width: 19px;
+    height: 28px;
+    transform: scale(-1, 1);
+    background-image: url("../img/icons/main-text-logo.png");
+}
+
+.header-menu {
+    display: inline-block;
+}
+
+.header-menu-item {
+    text-decoration: none;
+    color: var(--main-text-color);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-right: 71px;
+}
+
+.header-menu-item:nth-child(2)::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f0d7";
+    margin-left: 7px;
+}
+
+.header-menu-item:last-child {
+    margin-right: 65px;
+}
+
+.header-icons {
+    display: inline-block;
+}
+
+.header-icons img:first-child {
+    margin-right: 37px;
+}
