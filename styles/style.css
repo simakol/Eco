@@ -90,6 +90,10 @@
     display: inline-block;
 }
 
+.header-icons img {
+    cursor: pointer;
+}
+
 .header-icons img:first-child {
     margin-right: 37px;
 }
