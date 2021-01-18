@@ -21,15 +21,11 @@
     --main-text-color: #181818;
 }
 
-.container {
-    width: 1200px;
-    margin: 0 auto;
-}
-
 .header {
-    width: 100vw;
+    width: 100%;
     padding: 22px 0;
     font-family: 'Helvetica Neue light', sans-serif;
+    position: relative;
 }
 
 .header>.container {
@@ -38,16 +34,20 @@
 }
 
 .header-text>p {
-    font-size: 26px;
+    font-size: 18px;
     letter-spacing: 2.8px;
     color: var(--selected-text-color);
+    position: relative;
+    margin-left: 20px;
 }
 
 .header-text>p::before {
     content: "";
     width: 19px;
     height: 28px;
-    padding-right: 22px;
+    position: absolute;
+    left: -20px;
+    bottom: 0;
     background-image: url("../img/icons/main-text-logo.png");
 }
 
@@ -63,8 +63,40 @@
     background-image: url("../img/icons/main-text-logo.png");
 }
 
+.burger-menu-icon {
+    font-size: 25px;
+    color: rgb(167, 158, 158);
+    position: relative;
+    bottom: 3px;
+    margin-right: 15px;
+    width: 23px;
+    height: 23px;
+}
+
 .header-menu {
-    display: inline-block;
+    display: none;
+}
+
+.header-menu.active {
+    display: block;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background-color: #fff;
+    width: 100vw;
+
+}
+
+.header-menu.active>.header-menu-item {
+    font-size: 20px;
+    display: block;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-menu.active>.header-menu-item:last-child {
+    margin-bottom: 0;
 }
 
 .header-menu-item {
@@ -92,8 +124,38 @@
 
 .header-icons img {
     cursor: pointer;
+    margin-right: 37px;
 }
 
-.header-icons img:first-child {
-    margin-right: 37px;
+@media(max-width: 320px) {
+    .header-icons img {
+        display: none;
+    }
+}
+
+@media(min-width: 900px) {
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        width: 100vw;
+    }
+
+    .header-text>p {
+        font-size: 26px;
+    }
+
+    .header-menu {
+        display: inline-block;
+    }
+
+    .burger-menu-icon {
+        display: none;
+    }
+
+    .header-icons img:nth-child(2) {
+        margin-right: 0;
+    }
 }
